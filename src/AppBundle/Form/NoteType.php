@@ -4,7 +4,10 @@ namespace AppBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Form\FormEvent;
+use Symfony\Component\Form\FormEvents;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 /**
@@ -23,8 +26,14 @@ class NoteType extends AbstractType
     {
         $builder->setAction(@$options['action']);
 
-        $builder->add('content');
+        $builder->add('content', TextType::class, array(
+            'required' => !true,
+        ));
+
         $builder->add('submit', SubmitType::class);
+        $builder->addEventListener(FormEvents::POST_SUBMIT, function(FormEvent $event) {
+            $note = $event->getData();
+        });
     }
 
     /**

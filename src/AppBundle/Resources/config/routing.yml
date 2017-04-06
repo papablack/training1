@@ -1,4 +1,3 @@
-
 app_note_index:
     path: /
     defaults: { _controller: AppBundle:Note:index }

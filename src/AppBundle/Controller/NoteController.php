@@ -4,6 +4,7 @@ namespace AppBundle\Controller;
 
 use AppBundle\Entity\Note;
 use AppBundle\Form\NoteType;
+use Doctrine\DBAL\DBALException;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -49,8 +50,7 @@ class NoteController extends Controller
 
                 $this->addFlash('success', 'Note created');
             } catch (\Exception $exception) {
-                dump($exception);
-                exit;
+                $this->addFlash('error', 'Error occurred');
             }
         }
 

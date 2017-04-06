@@ -23,17 +23,6 @@ class Note
 
 
     /**
-     * @var int
-     */
-    private $priority = 0;
-
-    /**
-     * @var User
-     */
-    private $user;
-
-
-    /**
      * Get id
      *
      * @return int
@@ -68,28 +57,10 @@ class Note
     }
 
     /**
-     * Set priority
-     *
-     * @param integer $priority
-     *
-     * @return Note
+     * @var User
      */
-    public function setPriority($priority)
-    {
-        $this->priority = $priority;
+    private $user;
 
-        return $this;
-    }
-
-    /**
-     * Get priority
-     *
-     * @return integer
-     */
-    public function getPriority()
-    {
-        return $this->priority;
-    }
 
     /**
      * Set user

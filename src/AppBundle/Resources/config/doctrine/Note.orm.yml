@@ -9,6 +9,10 @@ AppBundle\Entity\Note:
             generator:
                 strategy: AUTO
     fields:
+        priority:
+            type: integer
+            options:
+                default: 0
         content:
             type: string
             length: 255
