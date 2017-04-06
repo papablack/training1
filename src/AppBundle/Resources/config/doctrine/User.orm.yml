@@ -12,4 +12,5 @@ AppBundle\Entity\User:
         notes:
             targetEntity: AppBundle\Entity\Note
             mappedBy: user
+            orderBy: { 'priority': 'desc' }
     lifecycleCallbacks: {  }
