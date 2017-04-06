@@ -1,0 +1,21 @@
+training1:
+    email: michal.haracewiat+training1@polcode.net
+    password: polcode
+    roles:
+        - ROLE_ADMIN
+training2:
+    email: michal.haracewiat+training2@polcode.net
+    password: polcode
+    roles: []
+training3:
+    email: michal.haracewiat+training3@polcode.net
+    password: polcode
+    roles: []
+training4:
+    email: michal.haracewiat+training4@polcode.net
+    password: polcode
+    roles: []
+training5:
+    email: michal.haracewiat+training5@polcode.net
+    password: polcode
+    roles: []
