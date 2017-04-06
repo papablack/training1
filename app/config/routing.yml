@@ -1,0 +1,10 @@
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+
+note:
+    resource: '@AppBundle/Resources/config/routing.yml'
+    prefix: /note
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"

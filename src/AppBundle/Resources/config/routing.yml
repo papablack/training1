@@ -1,0 +1,8 @@
+
+app_note_index:
+    path: /
+    defaults: { _controller: AppBundle:Note:index }
+
+app_note_note:
+    path: /note
+    defaults: { _controller: AppBundle:Note:note }

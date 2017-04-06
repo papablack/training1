@@ -1,0 +1,15 @@
+AppBundle\Entity\User:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\UserRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    oneToMany:
+        notes:
+            targetEntity: AppBundle\Entity\Note
+            mappedBy: user
+    lifecycleCallbacks: {  }
