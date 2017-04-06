@@ -2,17 +2,31 @@
 
 namespace Tests\AppBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use AppBundle\DataFixtures\ORM\Users;
+use Liip\FunctionalTestBundle\Test\WebTestCase;
 
 class DefaultControllerTest extends WebTestCase
 {
-    public function testIndex()
+//
+//    public function testIndex()
+//    {
+//        $client = $this->makeClient();
+//
+//        $crawler = $client->request('GET', '/note');
+//
+//        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+//        $this->assertContains('Welcome to Symfony', $crawler->filter('#container h1')->text());
+//    }
+
+    public function testIndexNotLogged()
     {
-        $client = static::createClient();
+        $fixtures = $this->loadFixtures(array(Users::class))->getReferenceRepository();
 
-        $crawler = $client->request('GET', '/');
+        $client = $this->makeClient();
 
-        $this->assertEquals(200, $client->getResponse()->getStatusCode());
-        $this->assertContains('Welcome to Symfony', $crawler->filter('#container h1')->text());
+        $crawler = $client->request('GET', '/note');
+
+        $this->assertStatusCode(302, $client);
     }
+
 }
